@@ -1,16 +1,25 @@
 ---
-import '../styles/global.css'
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout title="Hemlock Bay">
+  <main class="max-w-3xl mx-auto px-6 py-24 flex flex-col gap-10">
+    <header class="text-center space-y-3">
+      <p class="font-ui uppercase tracking-[0.2em] text-sm text-gold/80">Museum & Archive</p>
+      <h1 class="text-5xl md:text-6xl leading-tight">Hemlock Bay</h1>
+      <p class="font-ui text-sm text-parchment/80">An institutional setting for collected works.</p>
+    </header>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Hemlock Bay</title>
-	</head>
-	<body>
-		<h1>Hemlock Bay</h1>
-	</body>
-</html>
+    <div class="h-px bg-gold/30"></div>
+
+    <section class="space-y-6">
+      <p>
+        Hemlock Bay is a quiet home for collected work, assembled with care and presented with clarity.
+        Each piece is treated with respect for its provenance and for those who seek it.
+      </p>
+      <p>
+        This space favors measured pacing over novelty. Visitors are invited to linger, explore, and return
+        as the collection grows with intention.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
