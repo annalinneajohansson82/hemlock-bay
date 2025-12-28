@@ -1,23 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.astro"],
+  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        warmblack: "#1b1714",
-        antiqueGold: "#b08a3c",
+        ink: "#0b0c0f",
+        gold: "#c6a85a",
+        parchment: "#e8e3d7",
       },
       fontFamily: {
-        sans: ["'Source Sans 3'", "ui-sans-serif", "system-ui", "sans-serif"],
-        serif: ["'Source Serif 4'", "ui-serif", "Georgia", "serif"],
-      },
-      fontSize: {
-        base: ["1rem", { lineHeight: "1.6" }],
-        lg: ["1.125rem", { lineHeight: "1.6" }],
-        xl: ["1.25rem", { lineHeight: "1.5" }],
-      },
-      letterSpacing: {
-        tight: "-0.01em",
+        heading: ["'Cormorant Garamond'", "serif"],
+        body: ["'Libre Baskerville'", "serif"],
+        ui: ["'Inter'", "sans-serif"],
       },
     },
   },
