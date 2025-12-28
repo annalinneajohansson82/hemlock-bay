@@ -1,7 +1,12 @@
 ---
 import '../styles/global.css';
+import Masthead from '../components/Masthead.astro';
 
-const { title = 'Hemlock Bay' } = Astro.props;
+const {
+  title = 'Hemlock Bay',
+  motto = 'Museum & Archive',
+  subtitle = 'An institutional setting for collected works.',
+} = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,14 +14,14 @@ const { title = 'Hemlock Bay' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
   </head>
-  <body class="bg-ink text-parchment antialiased">
-    <slot />
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="hb-frame">
+      <Masthead title={title} motto={motto} subtitle={subtitle} />
+      <main id="main-content" class="hb-main">
+        <slot />
+      </main>
+    </div>
   </body>
 </html>

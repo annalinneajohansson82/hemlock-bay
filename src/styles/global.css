@@ -17,3 +17,215 @@
 @import "@fontsource/source-sans-3/latin-700.css";
 
 @import "@fontsource/im-fell-english-sc/latin-400.css";
+
+:root {
+  --hb-bg: #120f0a;
+  --hb-fg: #e8e2d6;
+  --hb-muted: #b7ad9c;
+  --hb-gold: #b08e4f;
+  --hb-rule: #7a6540;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--hb-bg);
+  color: var(--hb-fg);
+  font-family: "Crimson Pro", "Libre Baskerville", serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--hb-rule);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--hb-gold);
+}
+
+:focus-visible {
+  outline: 2px solid var(--hb-gold);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--hb-bg);
+  border: 1px solid var(--hb-rule);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.skip-link:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hb-frame {
+  max-width: 70ch;
+  margin: 3.5rem auto 4.5rem;
+  padding: 3rem 2.5rem 3.5rem;
+  border: 1px solid var(--hb-rule);
+  background: #17130d;
+}
+
+.hb-main {
+  display: block;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .hb-frame {
+    margin: 2rem 1rem 3rem;
+    padding: 2.25rem 1.5rem 2.75rem;
+  }
+}
+
+.hb-prose {
+  display: grid;
+  gap: 1.75rem;
+  position: relative;
+}
+
+.hb-prose::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+  color: var(--hb-fg);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  margin: 0;
+}
+
+.record-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  font-family: "IM Fell English SC", "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-variant: small-caps;
+  color: var(--hb-muted);
+}
+
+.record-meta span:first-child {
+  color: var(--hb-fg);
+}
+
+.ornamental-rule {
+  border: 0;
+  border-top: 1px solid var(--hb-rule);
+  margin: 1.25rem 0;
+  position: relative;
+}
+
+.ornamental-rule::after {
+  content: "";
+  position: absolute;
+  top: -0.15rem;
+  left: 50%;
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 1px solid var(--hb-rule);
+  transform: translateX(-50%) rotate(45deg);
+  background: #17130d;
+}
+
+.marginalia {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--hb-muted);
+  border-left: 1px solid var(--hb-rule);
+  padding-left: 1rem;
+}
+
+@media (min-width: 960px) {
+  .marginalia {
+    float: right;
+    width: 18ch;
+    margin: 0.25rem 0 1.25rem 2rem;
+  }
+}
+
+.hb-masthead {
+  text-align: center;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.hb-masthead-motto {
+  font-family: "IM Fell English SC", "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--hb-muted);
+  margin: 0;
+}
+
+.hb-masthead-title {
+  margin: 0;
+}
+
+.hb-masthead-subtitle {
+  margin: 0;
+  font-family: "Source Sans 3", "Inter", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hb-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,10 @@
+---
+const { title, motto, subtitle } = Astro.props;
+---
+
+<header class="hb-masthead">
+  {motto ? <p class="hb-masthead-motto">{motto}</p> : null}
+  <h1 class="hb-masthead-title">{title}</h1>
+  {subtitle ? <p class="hb-masthead-subtitle">{subtitle}</p> : null}
+  <hr class="ornamental-rule" aria-hidden="true" />
+</header>
