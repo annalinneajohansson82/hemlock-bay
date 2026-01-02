@@ -8,20 +8,33 @@ import OrnamentalRule from '../components/OrnamentalRule.astro';
   motto="Museum & Archive"
   subtitle="An institutional setting for collected works."
 >
+  <nav class="hb-ui text-sm uppercase tracking-hbWide text-[0.85rem] flex gap-4" aria-label="Secondary navigation">
+    <span>Records</span>
+    <span>Catalogues</span>
+    <span>Reading Room</span>
+  </nav>
+
   <section class="hb-prose">
     <div class="record-meta">
       <span>Record</span>
       <span>Collected work, assembled with care.</span>
     </div>
 
-    <p>
+    <header>
+      <p class="hb-accent text-[0.9rem]" aria-hidden="true">Decorative: Archival Seal</p>
+      <h1 class="hb-display tracking-hbWider font-bold text-4xl md:text-5xl">Hemlock Bay Archive</h1>
+    </header>
+
+    <p class="hb-body">
       Hemlock Bay is a quiet home for collected work, assembled with care and presented with clarity.
       Each piece is treated with respect for its provenance and for those who seek it.
     </p>
 
     <OrnamentalRule />
 
-    <p>This space favors measured pacing over novelty.</p>
+    <p class="hb-body">
+      This space favors measured pacing over novelty. Readers will find the tone restrained and the record-keeping exacting.
+    </p>
 
     <Marginalia label="Visitor note">
       Visitors are invited to linger, explore, and return as the collection grows with intention.

@@ -24,6 +24,9 @@
   --hb-muted: #b7ad9c;
   --hb-gold: #b08e4f;
   --hb-rule: #7a6540;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-kerning: normal;
 }
 
 *,
@@ -36,10 +39,9 @@ body {
   margin: 0;
   background: var(--hb-bg);
   color: var(--hb-fg);
-  font-family: "Crimson Pro", "Libre Baskerville", serif;
+  font-family: "Crimson Pro", ui-serif, Georgia, "Times New Roman", serif;
   font-size: 16px;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  line-height: 1.65;
 }
 
 img,
@@ -118,7 +120,7 @@ a:hover {
 h1,
 h2,
 h3 {
-  font-family: "Cinzel", "Cormorant Garamond", serif;
+  font-family: "Cinzel", ui-serif, Georgia, "Times New Roman", serif;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0 0 0.5rem;
@@ -145,7 +147,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem 1.25rem;
-  font-family: "IM Fell English SC", "Cinzel", serif;
+  font-family: "IM Fell English SC", ui-serif, Georgia, "Times New Roman", serif;
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   font-variant: small-caps;
@@ -212,11 +214,62 @@ p {
 
 .hb-masthead-subtitle {
   margin: 0;
-  font-family: "Source Sans 3", "Inter", sans-serif;
+  font-family: "Source Sans 3", ui-sans-serif, system-ui, "Segoe UI", "Roboto", "Arial", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--hb-muted);
+}
+
+@media print {
+  body {
+    background: white;
+    color: #111;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  .hb-display {
+    font-family: "Times New Roman", Georgia, serif;
+    letter-spacing: 0.06em;
+    color: #000;
+  }
+
+  nav,
+  button,
+  input,
+  select,
+  textarea,
+  .hb-ui {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .hb-frame,
+  .ornamental-rule::after {
+    background: transparent !important;
+  }
+}
+
+@layer utilities {
+  .hb-display {
+    @apply font-display tracking-hbWide leading-hbTight;
+  }
+
+  .hb-body {
+    @apply font-serif leading-hbBody;
+  }
+
+  .hb-ui {
+    @apply font-sans;
+  }
+
+  .hb-accent {
+    @apply font-accent;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

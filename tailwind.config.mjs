@@ -9,9 +9,18 @@ export default {
         parchment: "#e8e3d7",
       },
       fontFamily: {
-        heading: ["'Cormorant Garamond'", "serif"],
-        body: ["'Libre Baskerville'", "serif"],
-        ui: ["'Inter'", "sans-serif"],
+        display: ["Cinzel", "ui-serif", "Georgia", "Times New Roman", "serif"],
+        serif: ["Crimson Pro", "ui-serif", "Georgia", "Times New Roman", "serif"],
+        sans: ["Source Sans 3", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+        accent: ["IM Fell English SC", "ui-serif", "Georgia", "Times New Roman", "serif"],
+      },
+      letterSpacing: {
+        hbWide: "0.06em",
+        hbWider: "0.10em",
+      },
+      lineHeight: {
+        hbBody: "1.65",
+        hbTight: "1.15",
       },
     },
   },
