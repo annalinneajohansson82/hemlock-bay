@@ -8,7 +8,7 @@ import OrnamentalRule from '../components/OrnamentalRule.astro';
   motto="Museum & Archive"
   subtitle="An institutional setting for collected works."
 >
-  <nav class="hb-ui text-sm uppercase tracking-hbWide text-[0.85rem] flex gap-4" aria-label="Secondary navigation">
+  <nav class="hb-nav" aria-label="Secondary navigation">
     <span>Records</span>
     <span>Catalogues</span>
     <span>Reading Room</span>
@@ -16,28 +16,72 @@ import OrnamentalRule from '../components/OrnamentalRule.astro';
 
   <section class="hb-prose">
     <div class="record-meta">
-      <span>Record</span>
-      <span>Collected work, assembled with care.</span>
+      <span>Build</span>
+      <span>Design system sample for headings, links, and media.</span>
     </div>
 
     <header>
-      <p class="hb-accent text-[0.9rem]" aria-hidden="true">Decorative: Archival Seal</p>
-      <h1 class="hb-display tracking-hbWider font-bold text-4xl md:text-5xl">Hemlock Bay Archive</h1>
+      <p class="hb-seal" aria-hidden="true">HBA</p>
+      <h1 class="hb-display tracking-hbWider font-bold text-4xl md:text-5xl">Hemlock Bay Design Lab</h1>
     </header>
 
     <p class="hb-body">
-      Hemlock Bay is a quiet home for collected work, assembled with care and presented with clarity.
-      Each piece is treated with respect for its provenance and for those who seek it.
+      This page is a staging ground for typography, spacing, and tone. It includes multiple heading
+      levels, inline and block links, imagery, and short UI notes to validate the design system.
     </p>
 
     <OrnamentalRule />
 
+    <h2 class="hb-display">Project Overview</h2>
     <p class="hb-body">
-      This space favors measured pacing over novelty. Readers will find the tone restrained and the record-keeping exacting.
+      The current build targets Astro templates, reusable components, and styled content blocks. For
+      deeper notes see the <a href="/docs">documentation hub</a> and the
+      <a href="https://astro.build" rel="noreferrer">Astro reference</a>.
     </p>
 
+    <h3 class="hb-accent">Content Inventory</h3>
+    <p class="hb-body">
+      Use this section to confirm list styling, spacing, and link treatments for longer layouts.
+    </p>
+    <p class="hb-body">
+      <a href="/records/2026-archive-log">View the archive log</a> or jump to
+      <a href="#modules">modules and components</a>.
+    </p>
+
+    <figure class="hb-figure">
+      <img src="/record-sample.svg" alt="Record sample placeholder" width="720" height="468" loading="lazy" />
+      <figcaption>Record Sample • Layout &amp; Tone</figcaption>
+    </figure>
+
+    <OrnamentalRule />
+
+    <h2 id="modules" class="hb-display">Modules &amp; Components</h2>
+    <p class="hb-body">
+      Component blocks should feel restrained and legible. Use this space to preview cards, metadata
+      clusters, and extended copy.
+    </p>
+
+    <div class="record-meta">
+      <span>Module</span>
+      <span>Navigation, cards, and rule treatments.</span>
+      <span>Updated 09.22</span>
+    </div>
+
+    <h3 class="hb-accent">Primary Links</h3>
+    <p class="hb-body">
+      These links should stand out without feeling modern. Try
+      <a href="/apply">apply for access</a>,
+      <a href="/schedule">schedule a review</a>, and
+      <a href="/contact">contact the archive</a>.
+    </p>
+
+    <figure class="hb-figure">
+      <img src="/reading-room.svg" alt="Reading room placeholder" width="720" height="468" loading="lazy" />
+      <figcaption>Reading Room • Light, Depth, Spacing</figcaption>
+    </figure>
+
     <Marginalia label="Visitor note">
-      Visitors are invited to linger, explore, and return as the collection grows with intention.
+      Use marginalia for callouts, availability notes, and gentle UI guidance.
     </Marginalia>
   </section>
 </BaseLayout>
