@@ -6,14 +6,16 @@ const {
   title = 'Hemlock Bay',
   motto = 'Museum & Archive',
   subtitle = 'An institutional setting for collected works.',
+  lang = 'en',
 } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

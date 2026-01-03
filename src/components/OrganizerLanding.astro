@@ -1,0 +1,66 @@
+---
+import {
+  organizerLandingRoutes,
+  type OrganizerLandingLang,
+} from '../lib/i18n';
+
+export interface OrganizerContentSection {
+  heading?: string;
+  html: string;
+}
+
+interface OrganizerLandingProps {
+  lang: OrganizerLandingLang;
+  title: string;
+  content?: OrganizerContentSection[];
+  alternateUrl: string;
+  headOnly?: boolean;
+}
+
+const {
+  lang,
+  title,
+  content,
+  alternateUrl,
+  headOnly = false,
+} = Astro.props as OrganizerLandingProps;
+
+const currentUrl = organizerLandingRoutes[lang];
+const svUrl = organizerLandingRoutes.sv;
+const enUrl = organizerLandingRoutes.en;
+const svHref = lang === 'sv' ? currentUrl : alternateUrl;
+const enHref = lang === 'en' ? currentUrl : alternateUrl;
+---
+{headOnly ? (
+  <>
+    <link rel="alternate" hreflang="sv" href={svUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+  </>
+) : (
+  <section class="hb-prose">
+    <nav class="hb-nav hb-ui text-xs md:text-sm" aria-label="Language switcher">
+      <a href={svHref} aria-current={lang === 'sv' ? 'page' : undefined}>
+        Svenska
+      </a>
+      <a href={enHref} aria-current={lang === 'en' ? 'page' : undefined}>
+        English
+      </a>
+    </nav>
+
+    <h1 class="hb-display">{title}</h1>
+
+    {content?.length ? (
+      content.map((section) => (
+        <div>
+          {section.heading ? <h2 class="hb-accent">{section.heading}</h2> : null}
+          <div class="hb-body hb-prose-content space-y-4" set:html={section.html} />
+        </div>
+      ))
+    ) : (
+      <div class="hb-body hb-prose-content space-y-4">
+        <slot />
+      </div>
+    )}
+  </section>
+)}

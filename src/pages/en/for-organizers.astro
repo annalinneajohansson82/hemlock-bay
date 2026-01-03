@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OrganizerLanding from '../../components/OrganizerLanding.astro';
+import { getOrganizerLandingAlternateUrl } from '../../lib/i18n';
+import Content from '../../content/organizers/for-organizers.md';
+const lang = 'en' as const;
+const title = 'For organizers and shops';
+const alternateUrl = getOrganizerLandingAlternateUrl(lang);
+const pageProps = { lang, title, alternateUrl };
+---
+<BaseLayout title="Hemlock Bay" lang={lang}>
+  <OrganizerLanding slot="head" {...pageProps} headOnly />
+  <OrganizerLanding {...pageProps}>
+    <Content />
+  </OrganizerLanding>
+</BaseLayout>

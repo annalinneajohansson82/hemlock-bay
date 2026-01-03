@@ -98,7 +98,7 @@ a:hover {
 }
 
 .hb-frame {
-  max-width: 70ch;
+  max-width: 80ch;
   margin: 3.5rem auto 4.5rem;
   padding: 3rem 2.5rem 3.5rem;
   border: 1px solid var(--hb-rule);
@@ -152,7 +152,8 @@ h3 {
   font-family: "IM Fell English SC", ui-serif, Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: 0.02em;
-  margin: 0 0 0.5rem;
+  line-height: 1;
+  margin: 1.75rem 0;
   color: var(--hb-fg);
 }
 
@@ -172,8 +173,14 @@ p {
   margin: 0;
 }
 
-.hb-prose p {
-  max-width: 54ch;
+.hb-prose-content {
+  text-align: left;
+}
+
+.hb-prose-content ul,
+.hb-prose-content ol {
+  padding-left: 1.5rem;
+  text-align: left;
 }
 
 .hb-figure {
@@ -194,6 +201,7 @@ p {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--hb-muted);
+  line-height: 1;
 }
 
 .record-meta {
@@ -207,6 +215,7 @@ p {
   color: var(--hb-muted);
   justify-content: center;
   text-align: center;
+  line-height: 1;
 }
 
 .record-meta span:first-child {
@@ -267,6 +276,7 @@ p {
   text-transform: uppercase;
   color: var(--hb-gold);
   margin: 0;
+  line-height: 1;
 }
 
 .hb-masthead-title {
@@ -326,6 +336,7 @@ p {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--hb-gold);
+  line-height: 1;
 }
 
 .hb-seal::before,
